@@ -1,0 +1,99 @@
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(198, 170, 241);
+}
+
+
+.Titulo{
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
+
+.TituloContenedor{
+    font-size: 35px;
+    text-align: center;
+    color: black;  
+}
+
+.subtitulo{
+    font-size: 14px;
+    text-align: center;
+    color: white;
+}
+
+.contenedor{
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 525px;
+    width: 25%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.RutinasDeLaSemana{
+    width: 40%;
+}
+
+.contenedorPrincipal{
+    display: flex;
+    justify-content: space-between;
+}
+
+table{
+    border: 1px solid gray;
+    margin-top: 40px;
+    width: 550px;
+    height: 140px;
+}
+
+th{
+    background-color: grey;
+    font-size: 15px;
+    border: 1px solid gray;
+}
+
+td{
+    border: 1px solid gray;
+}
+
+.botonRutina {
+    background: linear-gradient(to bottom, #a2d5f2 0%, #006c9e 100%);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 8px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+}
+
+.recuadro{
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 150px;
+    margin-top: 30px;
+}
+
+.tipoRutina{
+    font-size: 20px;
+}
+
+.nombreRutina{
+    font-size: 15px;
+}
+
+.infoRutina{
+    font-size: 10px;
+}
+
+.divTuRutinadeLaSemana{
+    
+}
