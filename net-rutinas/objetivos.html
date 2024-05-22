@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetivos - ActiveX</title>
+    <!--CONEXIÓN CON BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--LINK A FUENTES-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--LINK AL ÍCONO DE LA PÁGINA-->
+    <link rel="icon" type="image/png" href="assets/img/Logo.png">
+    <!--LINK A CSS PRINCIPALES-->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/light-mode.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!--LINK A CSS ESPECÍFICO-->
+    <link rel="stylesheet" href="assets/css/objetivos.css">
+    <!--CONEXIÓN CON LOS SCRIPTS-->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/objetivos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+  <body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg border-bottom navbar1 light-mode">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="dashboard.html"><img src="assets/img/Logo.png" alt=""> ActiveX</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">ActiveX</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+            <ul  class="navbar-nav justify-content-start flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="dashboard.html">Inicio</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link nav-link-hover" href="rutinas.html">Rutinas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Dietas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="objetivos.html">Objetivos</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Explorar
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item disabled" href="#">Entrenadores</a></li>
+                  <li><a class="dropdown-item disabled" href="#">Nutriólogos</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="index.html">Quiénes somos</a></li>
+                  <li><a class="dropdown-item" href="#">Contáctanos</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="sesionBtns">
+                <button class="btnSignUp px-3 py-2" type="submit"><img src="assets/img/person.png" alt=""></button>
+                <button onclick="modoOscuro()" class="btn btnTemaOscuro"><img class="imgLuna" src="assets/img/moon.png" alt=""></button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!---->
+      <div class="general">
+        <h1>¿Estás cumpliendo tus objetivos?</h1>
+        <h4>Recuerda mejorar un poco mas cada dia</h4>
+        <br>
+        <div class = "contenedorFrames">
+          <div class = "columnaSemana">
+            <div class="frameSemana">
+              <h3>Objetivos de la semana</h3>
+              <div class="semana1">
+                <h6>Bajar 500 g</h6>
+              </div>
+              <div class="semana2">
+                <h6>Beber 6000 ml</h6>
+              </div>
+              <div class="semana3">
+                <h6>Realizar 3 entrenos</h6>
+              </div>
+              <button class = "agregar"><h5>Agregar objetivo</h5></button>
+            </div>
+          </div>
+          <div class = "columnaMedio">
+            <div class="framePeso">
+              <h3>Peso</h3>
+              <div class = "contenedorFrames">
+                <div class = "columnaGrafica">
+                  <div class="graficaPeso">
+                    <canvas id="graficaPeso"></canvas>
+                  </div>
+                  <div class="contenedorFrames">
+                    <div class="division">
+                      <button class="registrar">
+                        <h6>Registrar peso</h6>
+                      </button>
+                    </div>
+                    <div class="division">
+                      <button class="cambiarObjetivo">
+                        <h6>Cambiar peso objetivo</h6>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="columnaMensajes">
+                  <div class="mensaje1">
+                    <h4>¡Estas a 3.7 Kg de cumplir tu objetivo!</h4><h6>Aprox. 3 meses faltantes</h6>
+                  </div>
+                  <div class="mensaje2">
+                    <h4>¡Has reducido 11 Kg desde que comenzaste!</h4><h6>¡Sigue asi!</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="frameDiario">
+              <h3>Objetivos diarios</h3>
+              <div class="contenedorFrames">
+                <div class="division">
+                  <div class="graficas">
+                    <canvas id="graficaCirculo1" class="graficas"></canvas>
+                  </div>
+                  Beber 7 vasos de agua
+                  <button class="button1">
+                    Beber 1 vaso
+                  </button>
+                </div>
+                <div class="division">
+                  <div class="graficas">
+                    <canvas id="graficaCirculo2" class="graficas"></canvas>
+                  </div>
+                  Realizar 1 entreno
+                  <button class="button2">
+                    Realizar entreno
+                  </button>
+                </div>
+                <div class="division">
+                  <div class="graficas">
+                    <canvas id="graficaCirculo3" class="graficas"></canvas>
+                  </div>
+                  Cargar 20 kg
+                  <button class="button3">
+                    Beber 1 vaso
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class = "columnaRecords">
+            <div class="frameRecords">
+              <h3>Récords</h3>
+              <div class="records">
+                <div class = "contenedorFrames">
+                  <div>
+                    <img src="assets/img/Subtract.png" class="img" alt="">
+                  </div>
+                  <div>
+                    <h5>Racha maxima:</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="records">
+                <div class = "contenedorFrames">
+                  <div>
+                    <img src="assets/img/trophy-fill.png" class="img" alt="">
+                  </div>
+                  <div>
+                    <h5>Mayor carga semanal:</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="records">
+                <div class = "contenedorFrames">
+                  <div>
+                    <img src="assets/img/calendar3-week-fill.png" class="img" alt="">
+                  </div>
+                  <div>
+                    <h6>Mayor cantidad de entrenos en un solo mes:</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="records">
+                <div class = "contenedorFrames">
+                  <div>
+                    <img src="assets/img/pesa.png" class="img" alt="">
+                  </div>
+                  <div>
+                    <h6>Mayor cantidad de calorias quemadas:</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="records">
+                <div class = "contenedorFrames">
+                  <div>
+                    <img src="assets/img/pesa.png" class="img" alt="">
+                  </div>
+                  <div>
+                    <h5>Peso mas bajo:</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="records">
+                <div class = "contenedorFrames">
+                  <div>
+                    <img src="assets/img/pesa.png" class="img" alt="">
+                  </div>
+                  <div>
+                    <h5>Peso mas alto:</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="records">
+                <div class = "contenedorFrames">
+                  <div>
+                    <img src="assets/img/corredor.png" class="img" alt="">
+                  </div>
+                  <div>
+                    <h6>Mayor numero de pasos en un dia:</h6>
+                  </div>
+                </div>
+              </div>
+              <button class = "personalizar">
+                <h5>Personalizar Records</h5>
+              </button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class = "contenedorFrames"></div>
+
+      <!--SCRIPTS DE BOOTSTRAP-->
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    </body>
+</html>
