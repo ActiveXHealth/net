@@ -146,6 +146,70 @@
 
 .containerServicios {
     background-image: linear-gradient(to left, rgb(154,119,255), rgb(111, 86, 184));
+    padding-bottom: 100px;
+}
+
+.servicios {
+    gap: 5%;
+}
+
+.servicio {
+    margin-top: 20px;
+    background-color: var(--azul);
+    padding:20px;
+    border-radius: 15px;
+    height: 250px;
+}
+
+.planes .plan {
+    border-radius: 30px;
+    color: white;
+    padding: 20px;
+    max-width: 350px;
+}
+
+.planes .planA {
+    background-color: var(--azul);
+    height: max-content;
+}
+
+.planes .plan {
+    box-shadow: 3px 7px 3px rgba(88, 88, 88, 0.363);
+}
+
+.planX {
+    background-color: rgb(181, 85, 255);
+}
+
+.planes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.planes .btnA {
+    background-color: rgb(45,138,138);
+    color: white;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+}
+
+.btnX {
+    background-color: rgb(120, 0, 211);
+    color: white;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+}
+
+.servicio .img {
+    margin-top: 20px;
+}
+
+.txtPlanes {
+    font-weight: 500;
 }
 
 /* Media queries */
